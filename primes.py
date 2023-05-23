@@ -1,3 +1,4 @@
+import math
 #checks if the given number is prime, and if so appends it to the list
 def primeCheck(num:int,primes: list):
     if (num % 2 != 0 and num % 3 != 0):
@@ -9,14 +10,17 @@ def primeCheck(num:int,primes: list):
 #finds all prime numbers in specific range
 def findPrimeNums(lowerBound: int, upperBound: int) -> list:
     primes = []
+    step = 1
     #+1 because range is not inclusive of it's upperbound
-    for num in range(lowerBound, upperBound+1):
+    for num in range(lowerBound, upperBound+1,step):
         if(num == 2 or num == 3):
             primes.append(num)
         else:
             primeCheck(num,primes)
+        step = int(math.sqrt(num))
     print(primes)
     return primes
+
 #guards the script from running when being imported
 #this part after the if will only trigger if this script is being executed directly
 if __name__ == "__main__":

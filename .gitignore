@@ -1,2 +1,4 @@
 #ignore .github folder
 .github
+__pycache__/primes.cpython-310.pyc
+__pycache__/test_primes.cpython-310-pytest-7.3.1.pyc
